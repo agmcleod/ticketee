@@ -6,6 +6,6 @@ Feature: Creating Projects
   Scenario: Creating a project
     Given I am on the homepage
     When I follow "New Project"
-    And I fill in "name" with "TextMate 2"
+    And I fill in "project_name" with "TextMate 2"
     And I press "Create Project"
     Then I should see "Project has been created"
