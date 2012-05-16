@@ -1,5 +1,10 @@
 #ticket
   %h2= @ticket.title
+  %br
+    %small 
+      Created by 
+      = @ticket.user.email
+      
   = simple_format(@ticket.description)
 
   = link_to "Edit Ticket", [:edit, @project, @ticket]
