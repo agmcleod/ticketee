@@ -33,6 +33,7 @@ end
 gem 'jquery-rails'
 
 gem 'devise', '~> 1.4.3'
+gem 'cancan'
 
 group :test, :development do
   gem 'rspec-rails'
