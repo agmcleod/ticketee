@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    font: 13pt "Myriad Pro", Helvetica;
+    font: 13pt Helvetica, Arial, sans-serif;
     margin: 5px 10% 0 10%;
     height: 100%;
     padding: 30px;

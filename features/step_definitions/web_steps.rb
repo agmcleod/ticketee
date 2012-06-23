@@ -93,6 +93,7 @@ end
 
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"(?: within "([^"]*)")?$/ do |path, field, selector|
   with_scope(selector) do
+    path = File.join Rails.root, path
     attach_file(field, path)
   end
 end
@@ -220,4 +221,8 @@ end
 
 Then /^I should see (\d+) "([^"]*)" tags$/ do |amount, tag_name|
   page.find(:css, tag_name, count: amount)
+end
+
+Then /^I pause for a while$/ do
+  sleep 60
 end
