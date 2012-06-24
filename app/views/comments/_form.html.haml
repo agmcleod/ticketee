@@ -1,0 +1,8 @@
+%strong New Comment
+= form_for [@ticket, @comment] do |f|
+  = f.error_messages
+  %p
+    = f.label :text
+    = f.text_area :text
+
+  = f.submit
