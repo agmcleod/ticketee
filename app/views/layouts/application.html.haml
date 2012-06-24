@@ -8,6 +8,12 @@
       Ticketee
       
   = stylesheet_link_tag    "application", :media => "all"
+  - states_css = []
+  - for state in @states
+    - states_css << ".state_#{state.name.parameterize} { background: #{state.background}; color: #{state.color}; }"
+
+  :css
+    #{states_css.join("")}
   = javascript_include_tag "application"
   = csrf_meta_tags
   
