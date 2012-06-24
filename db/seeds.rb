@@ -5,7 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-admin_user = User.create(email: "admin@ticketee.com", password: "password")
-admin_user.admin = true
-admin_user.confirm!
-Project.create(name: "Ticketee Beta")
+if User.find_by_email("admin@ticketee.com").nil?
+  admin_user = User.create email: "admin@ticketee.com", password: "password"
+  admin_user.admin = true
+  admin_user.confirm!
+end
+
+Project.create name: "Ticketee Beta" if Project.find_by_name("Ticketee Beta").nil?
+
+State.create name: "New", background: "#85ff00", color: "white"
+State.create name: "Open", background: "#00cffd", color: "white"
+State.create name: "Closed", background: "black", color: "white"

@@ -4,6 +4,7 @@
   %small 
     Created by 
     = @ticket.user.email
+    = render @ticket.state if @ticket.state
   - if @ticket.assets.exists?
     %h3 Attached File
     .assets

@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @ticket.comments.build params[:comment].merge(user: current_user)
+    @states = State.all
     if @comment.save
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
