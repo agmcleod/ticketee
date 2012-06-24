@@ -13,6 +13,6 @@ end
 
 Project.create name: "Ticketee Beta" if Project.find_by_name("Ticketee Beta").nil?
 
-State.create name: "New", background: "#85ff00", color: "white"
+State.create name: "New", background: "#85ff00", color: "white", default: true
 State.create name: "Open", background: "#00cffd", color: "white"
 State.create name: "Closed", background: "black", color: "white"
