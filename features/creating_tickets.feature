@@ -49,7 +49,8 @@ Scenario: Creating a ticket with an attachment
   And I should see "spin.txt" within "#ticket .assets"
 
 Scenario: Creating a ticket with tags
-  When  fill in "Title" with "Non-standards compliance"
+  And "user@ticketee.com" can tag the "Internet Explorer" project
+  When fill in "Title" with "Non-standards compliance"
   And I fill in "Description" with "My pages are ugly!"
   And I fill in "Tags" with "browser visual"
   And I press "Create Ticket"
