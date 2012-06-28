@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe FilesController do
-  let(:project) { Factory(:project) }
-  let(:ticket) { Factory(:ticket, project: project) }
+  let(:project) { FactoryGirl.create(:project) }
+  let(:ticket) { FactoryGirl.create(:ticket, project: project) }
   let(:good_user) { create_user! }
   let(:bad_user) { create_user! }
 
