@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment = @ticket.comments.build params[:comment].merge(user: current_user)
     @states = State.all
     if @comment.save
+      @ticket.tag! params[:tags]
       flash[:notice] = "Comment has been created."
       redirect_to [@ticket.project, @ticket]
     else
