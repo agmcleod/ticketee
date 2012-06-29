@@ -10,9 +10,12 @@ class Ticket < ActiveRecord::Base
   accepts_nested_attributes_for :assets
   has_many :comments
   has_and_belongs_to_many :tags
-  
+  has_and_belongs_to_many :watchers, join_table: "ticket_watchers", class_name: "User"
+
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 10 }
+
+  after_create :creator_watches_me
 
   def tag!(tags)
     unless tags.nil?
@@ -21,5 +24,11 @@ class Ticket < ActiveRecord::Base
       end
       self.tags << tags
     end
+  end
+
+  private
+
+  def creator_watches_me
+    self.watchers << user
   end
 end
