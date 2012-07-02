@@ -8,3 +8,11 @@ FATAL:  database "ticketee_test" does not exist
 FATAL:  database "ticketee_test" does not exist
 FATAL:  database "ticketee_test" does not exist
 FATAL:  database "ticketee_test" does not exist
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-06-30 20:40:32 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "ticketee_test" does not exist
