@@ -41,6 +41,7 @@ gem 'cancan'
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
+  gem 'gmail'
 end
 
 group :test do
